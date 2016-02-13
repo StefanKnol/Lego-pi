@@ -23,7 +23,7 @@ for event in xbox_read.event_stream(deadzone=12000):
     # left thumbstick controls the speed
     if event.key=='Y1':
         # if your servo turns the wrong way, add a minus in front of: 32768 so it would be */-32768
-        steer = int( servoDrive + (servoDriveWidth*-event.value)/32768 )
+        drive = int( servoDrive + (servoDriveWidth*-event.value)/32768 )
         pwm.setPWM(0, 0, drive)
     # Right thumbstick controls the steering
     if event.key=='X2':
