@@ -84,3 +84,21 @@ we encountered a problem that it wouldn't run and figured out we had to delete p
 To launch this on startup just add the file /lego-controller to the rc.local file (note: make sure to direct it to the file from the root folder, so if it is in your downloads folder: sudo /home/pi/Downloads/lego-pi-master/lego-controller.sh
 
 If you start it up thru rc.local you have to kill the xboxdrv task first so add that command before lego-controller.sh.
+
+If you get the following error or something like it:
+Traceback (most recent call last):
+  File "/home/pi/Lego-pi/control.py", line 4, in <module>
+    from lib.Adafruit_PWM_Servo_Driver import PWM
+  File "/home/pi/Lego-pi/lib/Adafruit_PWM_Servo_Driver.py", line 5, in <module>
+    from Adafruit_I2C import Adafruit_I2C
+  File "/home/pi/Lego-pi/lib/Adafruit_I2C.py", line 9, in <module>
+    class Adafruit_I2C :
+  File "/home/pi/Lego-pi/lib/Adafruit_I2C.py", line 11, in Adafruit_I2C
+    def __init__(self, address, bus=smbus.SMBus(0), debug=False):
+IOError: [Errno 2] No such file or directory
+xboxdrv: no process found
+ change 
+ def __init__(self, address, bus=smbus.SMBus(0), debug=False): 
+ to 
+ def __init__(self, address, bus=smbus.SMBus(1), debug=False):
+ or the other way around for the RPi A or B
