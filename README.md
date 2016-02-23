@@ -87,7 +87,7 @@ If you start it up thru rc.local you have to kill the xboxdrv task first so add 
 
 If you get the following error or something like it:
 Traceback (most recent call last):
-  File "/home/pi/Lego-pi/control.py", line 4, in <module>
+  <br>File "/home/pi/Lego-pi/control.py", line 4, in <module>
     from lib.Adafruit_PWM_Servo_Driver import PWM
   File "/home/pi/Lego-pi/lib/Adafruit_PWM_Servo_Driver.py", line 5, in <module>
     from Adafruit_I2C import Adafruit_I2C
