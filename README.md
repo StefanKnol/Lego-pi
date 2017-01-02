@@ -39,9 +39,7 @@ The Xbox 360 Wireless Gaming Receiver for Windows is required to connect the con
 # Right thumbstick controls the stearing<br>
 if event.key=='X2':<br>
     steer = int( servoSteer + (servoSteerWidth*-event.value)/32768 )<br>
-    pwm.setPWM(1, 0, steer)<br>
-<br>    
-<br>    
+    pwm.setPWM(1, 0, steer)<br> 
 <br>  
 To run everything you must have a raspberry pi B or B+ with a fresh install of raspbian wheezy.
 <br>
